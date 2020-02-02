@@ -14,6 +14,9 @@ rm -rf ./svn/tags/${VER}/*
 rm -rf ./svn/assets/*
 
 # create tar dir if need
+test ! -d ./svn/assets && { mkdir -p ./svn/assets ; }
+test ! -d ./svn/branches && { mkdir -p ./svn/branches ; }
+test ! -d ./svn/trunk && { mkdir -p ./svn/trunk ; }
 test ! -d ./svn/tags/${VER} && { mkdir -p ./svn/tags/${VER} ; }
 
 #update readme && main file

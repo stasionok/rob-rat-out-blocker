@@ -3,7 +3,7 @@
 cd svn
 
 # For first push you should add repository
-# svn co https://plugins.svn.wordpress.org/wp-drupal-imagecache .
+# svn co https://plugins.svn.wordpress.org/rob-rat-out-blocker .
 
 svn add ./assets/*
 svn add ./branches/*

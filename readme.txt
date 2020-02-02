@@ -9,12 +9,12 @@ Requires PHP: 7.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Restrict execution of certain external requests with partial url or even regexp to prevent personal data leakage (as example)
+Restrict execution of certain external requests with partial url or even regex to prevent personal data leakage (as example)
 
 == Description ==
 
 With this simple plugin you can restrict extra external requests made with internal wordpress WP_Http class.
-Just put in filter rules field what you wish to restrict. One url part or url regexp per line.
+Just put in filter rules field what you wish to restrict. One url part or url regex per line.
 By default plugin return WP_Error answer for restricted requests. But you can put in response your custom response data.
 
 == Installation ==

@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: ROB (rat out blocker)
- * Description: Block external requests with regexp or return JSON response
+ * Description: Block external requests with regex or url part
  * Plugin URI:  https://web-marshal.ru/rob-rat-out-blocker/
  * Author URI:  https://www.linkedin.com/in/stasionok/
  * Author:      Stanislav Kuznetsov
