@@ -15,8 +15,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'ROB_REQUIRED_PHP_VERSION', '7.0' ); // TODO:
-define( 'ROB_REQUIRED_WP_VERSION', '5.3' ); // TODO:
+define( 'ROB_REQUIRED_PHP_VERSION', '7.0' );
+define( 'ROB_REQUIRED_WP_VERSION', '5.0' );
 
 /**
  * Checks if the system requirements are met

@@ -1,5 +1,3 @@
-из настроек в инструменты
-
 примеры на форум
 democontent.codex-themes.com/av_validate_code.php@#$@#${"body":"{\"result\":true,\"item_id\":\"16061685\"}"}@#$array
 themegrill.com/(.*)request=activation@#$1@#${"response":{"code":200},"body":"{\"activated\":true,\"message\":\"Successfully\"}"}@#$array

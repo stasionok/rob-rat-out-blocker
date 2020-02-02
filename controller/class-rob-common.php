@@ -133,7 +133,6 @@ if ( ! class_exists( 'ROB_Common' ) ) {
 		 */
 		private function define_admin_hooks() {
 			if ( is_admin() ) {
-//				add_action( 'admin_enqueue_scripts', array( $this, 'register_admin_scripts' ) );
 				add_action( 'admin_menu', array( $this, 'register_settings_pages' ) );
 				add_filter(
 					"plugin_action_links_" . plugin_basename( dirname( __DIR__ ) . '/bootstrap.php' ),
@@ -151,6 +150,16 @@ if ( ! class_exists( 'ROB_Common' ) ) {
 			add_action( 'pre_http_request', array( $this, 'pre_http_request' ), 99, 3 );
 		}
 
+		/**
+		 * Add link to plugin settings page im plugins list
+		 *
+		 * @param $actions
+		 * @param $plugin_file
+		 * @param $plugin_data
+		 * @param $context
+		 *
+		 * @return mixed
+		 */
 		public static function plugin_action_links( $actions, $plugin_file, $plugin_data, $context ) {
 			array_unshift( $actions,
 				sprintf( '<a href="%s" aria-label="%s">%s</a>',
@@ -163,9 +172,12 @@ if ( ! class_exists( 'ROB_Common' ) ) {
 			return $actions;
 		}
 
+		/**
+		 * Register tools page
+		 */
 		public function register_settings_pages() {
 			add_submenu_page(
-				'options-general.php',
+				'tools.php',
 				__( 'ROB (rat out blocker)', ROB_Common::PLUGIN_SYSTEM_NAME ),
 				__( 'ROB (rat out blocker)', ROB_Common::PLUGIN_SYSTEM_NAME ),
 				'administrator',
@@ -214,6 +226,15 @@ if ( ! class_exists( 'ROB_Common' ) ) {
 			return ob_get_clean();
 		}
 
+		/**
+		 * Main handler with hook pre_http_request filter
+		 *
+		 * @param $first
+		 * @param $parsed_args
+		 * @param $url
+		 *
+		 * @return bool|mixed|WP_Error
+		 */
 		public function pre_http_request( $first, $parsed_args, $url ) {
 			$filters = get_option( 'rob_request_filters', array() );
 

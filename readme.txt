@@ -1,74 +1,49 @@
-=== Thumbnails like in Drupal ===
+=== ROB (rat out blocker) ===
 Contributors: stasionok
-Donate link: https://web-marshal.ru/wordpress-thumbnails-like-in-drupal/
-Tags: image, thumbnail, drupal, regenerate, image effect, image preset, imagecache
-Requires at least: 5.3
+Donate link: https://web-marshal.ru/rob-rat-out-blocker/
+Tags: block, request, external request, security, safety, speed up
+Requires at least: 5.0
 Tested up to: 5.3
-Stable tag: 1.0.1
+Stable tag: 1.0
 Requires PHP: 7.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Wordpress implementation/fork of Drupal imagecache module.
+Restrict execution of certain external requests with partial url or even regexp to prevent personal data leakage (as example)
 
 == Description ==
 
-Take some thumbnail type (called here as preset) and cast available image effects on it to get expected size or view.
-
-With this plugin you can:
-
-* change exists preset or create new one.
-* on upload image create only enabled preset thumbnails
-* disable unused presets
-* remove disabled or extra/trash thumbnails images
-* regenerate any preset thumbnail images (after change preset as ex.)
-
-For each preset you can cast any of available effects to change thumbnail sizes or just desaturate it or something else..
+With this simple plugin you can restrict extra external requests made with internal wordpress WP_Http class.
+Just put in filter rules field what you wish to restrict. One url part or url regexp per line.
+By default plugin return WP_Error answer for restricted requests. But you can put in response your custom response data.
 
 == Installation ==
 
 This section describes how to install the plugin and get it working.
 
-1. Upload the plugin files to the `/wp-content/plugins/wp-drupal-imagecache` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/rob-rat-out-blocker` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
-3. Go to plugin settings page and tune your presets and thumbnails
-
-After enabling plugin, it create image in image library. It image critical needed for plugin for preview changes. Please do not remove it.
+3. Go to plugin settings page and put your restrictions
 
 == Frequently Asked Questions ==
 
-= Why I got problem after using plugin =
+= How to find or detect outgoing requests =
 
-Please note that main system preset *large* used as default when include in Gutenberg editor.
-So if you disable *large* and delete all unused thumbnail your page can got broken image!
-It that case just enable *large* and regenerate it thumbnails.
+You can use for that *Log HTTP Requests* plugin
 
-== Frequently Asked Questions ==
+= Which format for custom answer accepted =
 
-= If I remove plugin image for preview by mistake =
+You should put (if you need it) JSON encoded string. Then you say to plugin how to represent response format and it convert your string in required format.
 
-Just deactivate and activate plugin again. It create that image again.
+= Which answer format accepted =
 
-= How to add custom effects to plugin effects list =
-
-1. Use filter *wpdi_get_available_effects* to add or remove effect from effects list
-2. Extend *WPDI_Effects_Imagick* and/or *WPDI_Effects_GD* plugin classes if you want to add custom effect
-3. Use *wp_image_editors* to replace plugin handlers with created in #2
-4. Use *wpdi_make_preset_effect* for set handler function name (optional), handle function with effect name by default
-5. Use *wpdi_build_preset_effect* for describe effect in presets linst (optional)
-
-ps: You should use priority greater then in plugin (WPDI_Common::PLUGIN_HOOK_PRIORITY);
+Plugin can convert your answer to array, object or leave string as is
 
 == Screenshots ==
 
-1. Main plugin page with all presets list, it effects and actions
-2. Preset edit page. You can see thumbnail preview, all effects casted to preset and preset actions
-3. Scale and crop effect parameters window
+1. Main plugin page with rules field and placeholder examples
 
 == Changelog ==
 
 = 1.0 =
 * Basic functionality released.
-
-= 1.0.1 =
-* Fix check for gd/imagick php extension. Now you can use plugin with only imagick or gd extension enabled
