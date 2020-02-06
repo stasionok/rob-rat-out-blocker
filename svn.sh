@@ -1,9 +1,12 @@
 #!/bin/bash
 
-cd svn
+cd ./svn/
 
-# For first push you should add repository
-# svn co https://plugins.svn.wordpress.org/rob-rat-out-blocker .
+if [ ! -d \.svn ]; then
+  echo -e "\e[31mFor first push you should add repository[0m\e[0"
+  echo -e "\e[31m\033[4msvn co https://plugins.svn.wordpress.org/rob-rat-out-blocker ./svn/\033\e[0"
+    exit 0;
+fi;
 
 svn add ./assets/*
 svn add ./branches/*
