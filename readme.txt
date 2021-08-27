@@ -3,7 +3,7 @@ Contributors: stasionok
 Donate link: https://web-marshal.ru/rob-rat-out-blocker/
 Tags: block, request, external request, security, safety, speed up
 Requires at least: 5.0
-Tested up to: 5.3
+Tested up to: 5.7
 Stable tag: 1.0
 Requires PHP: 7.0
 License: GPLv3
