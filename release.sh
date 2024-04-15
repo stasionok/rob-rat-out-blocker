@@ -14,7 +14,7 @@ rm -rf ./svn/tags/${VER}/*
 rm -rf ./svn/assets/*
 
 # create tar dir if need
-test ! -d ./svn/assets && { mkdir -p ./svn/assets ; }
+test ! -d ./svn/assets/blueprints && { mkdir -p ./svn/assets/blueprints ; }
 test ! -d ./svn/trunk && { mkdir -p ./svn/trunk ; }
 test ! -d ./svn/tags/${VER} && { mkdir -p ./svn/tags/${VER} ; }
 
@@ -23,8 +23,6 @@ sed -i -E "s/Stable tag: (.*)/Stable tag: ${VER}/" readme.txt
 sed -i -E "s/ \* Version:     (.*)/ \* Version:     ${VER}/" bootstrap.php
 
 #copy files
-cp ./*.png ./svn/assets
-
 cp -vr ./controller ./svn/trunk/controller/
 cp -vr ./controller ./svn/tags/${VER}/controller/
 
@@ -41,8 +39,8 @@ cp -v ./readme.txt ./svn/trunk/
 cp -v ./readme.txt ./svn/tags/${VER}
 
 #copy common files
-
 cp ./*.png ./svn/assets
+cp ./blueprint.json ./svn/assets/blueprints/
 
 #msg
 echo -e "\e[31m!!! PLEASE UPDATE \033[4mchangelog !!!\e[0m"
