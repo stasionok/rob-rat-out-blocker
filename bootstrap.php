@@ -5,7 +5,7 @@
  * Plugin URI:  https://web-marshal.ru/rob-rat-out-blocker/
  * Author URI:  https://www.linkedin.com/in/stasionok/
  * Author:      Stanislav Kuznetsov
- * Version:     1.0.3
+ * Version:     1.0.4
  * License: GPLv2 or later
  * Text Domain: rob-rat-out-blocker
  * Domain Path: /languages

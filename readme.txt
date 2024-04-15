@@ -4,7 +4,7 @@ Donate link: https://web-marshal.ru/rob-rat-out-blocker/
 Tags: block, request, external request, security, safety
 Requires at least: 5.0
 Tested up to: 6.5.2
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 Requires PHP: 7.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -54,3 +54,6 @@ Plugin can convert your answer to array, object or leave string as is
 = 1.0.3 =
 * Test WP 6.5.2 compatibility
 * Fix codex issues
+
+= 1.0.4 =
+* Add blueprint.json for wp plugin page preview button
