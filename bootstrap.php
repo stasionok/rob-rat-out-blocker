@@ -4,6 +4,7 @@
  * Description: Block external requests with regex or url part
  * Plugin URI:  https://web-marshal.ru/rob-rat-out-blocker/
  * Author URI:  https://www.linkedin.com/in/stasionok/
+ * Author Telegram: https://t.me/stasionok
  * Author:      Stanislav Kuznetsov
  * Version:     1.0.4
  * License: GPLv2 or later
@@ -29,11 +30,11 @@ function rob_requirements_met() {
 	$errors = false;
 
 	if ( version_compare( PHP_VERSION, ROB_REQUIRED_PHP_VERSION, '<' ) ) {
-		$errors[] = __( "Your server is running PHP version " . PHP_VERSION . " but this plugin requires at least PHP " . ROB_REQUIRED_PHP_VERSION . ". Please run an upgrade.", ROB_Common::PLUGIN_SYSTEM_NAME );
+		$errors[] = __( "Your server is running PHP version " . PHP_VERSION . " but this plugin requires at least PHP " . ROB_REQUIRED_PHP_VERSION . ". Please run an upgrade.", 'rob-rat-out-blocker' );
 	}
 
 	if ( version_compare( $wp_version, ROB_REQUIRED_WP_VERSION, '<' ) ) {
-		$errors[] = __( "Your Wordpress running version is " . esc_html( $wp_version ) . " but this plugin requires at least version " . ROB_REQUIRED_WP_VERSION . ". Please run an upgrade.", ROB_Common::PLUGIN_SYSTEM_NAME );
+		$errors[] = __( "Your Wordpress running version is " . esc_html( $wp_version ) . " but this plugin requires at least version " . ROB_REQUIRED_WP_VERSION . ". Please run an upgrade.", 'rob-rat-out-blocker' );
 	}
 
 	return $errors;

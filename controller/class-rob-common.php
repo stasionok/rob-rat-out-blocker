@@ -85,7 +85,7 @@ if ( ! class_exists( 'ROB_Common' ) ) {
 			if ( $error ) {
 				if ( is_wp_error( $error ) ) {
 					$error = $error->get_error_message();
-					$error = __( $error, ROB_Common::PLUGIN_SYSTEM_NAME );
+					$error = esc_html(__( $error, 'rob-rat-out-blocker' ));
 				}
 				array_push( $get_error, $error );
 			}
@@ -94,7 +94,7 @@ if ( ! class_exists( 'ROB_Common' ) ) {
 			if ( ! empty( $get_error ) ) {
 				echo '<div class="notice notice-error">';
 				foreach ( $get_error as $msg ) {
-					echo '<p>' . $msg . '</p>';
+					echo '<p>' . esc_html($msg) . '</p>';
 				}
 				echo '</div>';
 			}
@@ -120,7 +120,7 @@ if ( ! class_exists( 'ROB_Common' ) ) {
 			if ( ! empty( $get_success ) ) {
 				echo '<div class="notice notice-success">';
 				foreach ( $get_success as $msg ) {
-					echo '<p>' . $msg . '</p>';
+					echo '<p>' . esc_html($msg) . '</p>';
 				}
 				echo '</div>';
 			}
@@ -147,7 +147,7 @@ if ( ! class_exists( 'ROB_Common' ) ) {
 		 * Add actions and work for common part of plugin
 		 */
 		private function define_common_hooks() {
-			add_action( 'pre_http_request', array( $this, 'pre_http_request' ), 99, 3 );
+			add_action( 'pre_http_request', array( $this, 'pre_http_request' ), 999, 3 );
 		}
 
 		/**
@@ -163,9 +163,9 @@ if ( ! class_exists( 'ROB_Common' ) ) {
 		public static function plugin_action_links( $actions, $plugin_file, $plugin_data, $context ) {
 			array_unshift( $actions,
 				sprintf( '<a href="%s" aria-label="%s">%s</a>',
-					menu_page_url( ROB_Common::PLUGIN_SYSTEM_NAME, false ),
-					esc_attr__( 'open ROB page', ROB_Common::PLUGIN_SYSTEM_NAME ),
-					esc_html__( "open ROB", ROB_Common::PLUGIN_SYSTEM_NAME )
+					menu_page_url( 'rob-rat-out-blocker', false ),
+					esc_attr__( 'open ROB page', 'rob-rat-out-blocker' ),
+					esc_html__( "open ROB", 'rob-rat-out-blocker' )
 				)
 			);
 
@@ -178,10 +178,10 @@ if ( ! class_exists( 'ROB_Common' ) ) {
 		public function register_settings_pages() {
 			add_submenu_page(
 				'tools.php',
-				__( 'ROB (rat out blocker)', ROB_Common::PLUGIN_SYSTEM_NAME ),
-				__( 'ROB (rat out blocker)', ROB_Common::PLUGIN_SYSTEM_NAME ),
+				__( 'ROB (rat out blocker)', 'rob-rat-out-blocker' ),
+				__( 'ROB (rat out blocker)', 'rob-rat-out-blocker' ),
 				'administrator',
-				ROB_Common::PLUGIN_SYSTEM_NAME,
+				'rob-rat-out-blocker',
 				__CLASS__ . '::markup_settings_page'
 			);
 		}
@@ -241,20 +241,45 @@ if ( ! class_exists( 'ROB_Common' ) ) {
 			if ( ! empty( $filters ) ) {
 				foreach ( $filters as $part ) {
 					$rule      = explode( '@#$', $part );
-					$is_regexp = ! isset( $rule[1] ) ? false : (bool) $rule[1];
+					$is_regexp = isset( $rule[1] ) &&  $rule[1];
+
+					$catchByBodyCondition = $this->checkBodySkip( $rule[4] ?? null, $parsed_args );
 
 					if ( ! $is_regexp && false !== stripos( $url, $rule[0] ) ) {
-						return $this->make_response( $rule );
+						if (empty($rule[4]) || $catchByBodyCondition ) {
+							return $this->make_response( $rule );
+						}
 					}
 
 					$pattern = '@' . str_replace( '@', '\@', $rule[0] ) . '@si';
 					if ( $is_regexp && preg_match( $pattern, $url ) ) {
-						return $this->make_response( $rule );
+						if (empty($rule[4]) || $catchByBodyCondition ) {
+							return $this->make_response( $rule );
+						}
 					}
 				}
 			}
 
 			return false; // skip here and continue request
+		}
+
+		private function checkBodySkip( $rule, $parsed_args ) {
+			if ( empty( $rule ) ) {
+				return false;
+			}
+
+			$bodyCheck     = json_decode( $rule, true );
+			$bodyCheckKeys = array_keys( $bodyCheck );
+
+			foreach ( $bodyCheckKeys as $key ) {
+				if ( isset( $parsed_args['body'][ $key ] ) ) {
+					if ( $parsed_args['body'][ $key ] == $bodyCheck[ $key ] ) {
+						return true;
+					}
+				}
+			}
+
+			return false;
 		}
 
 		/**
@@ -268,12 +293,12 @@ if ( ! class_exists( 'ROB_Common' ) ) {
 		 */
 		private function make_response( array $rule ) {
 			// if response not set but need to block just response with some common response error
-			if ( ! isset( $rule[2] ) OR ! self::is_json( $rule[2] ) ) {
-				return new WP_Error( 'http_request_failed', __( 'Too many redirects.' ) );
+			if ( ! isset( $rule[2] ) or ! self::is_json( $rule[2] ) ) {
+				return new WP_Error( 'http_request_failed', esc_html(__( 'Too many redirects.' )) );
 			}
 
 			// check type of response
-			if ( empty( $rule[3] ) OR ! in_array( $rule[3], array( 'object', 'array', 'string' ) ) ) {
+			if ( empty( $rule[3] ) or ! in_array( $rule[3], array( 'object', 'array', 'string' ) ) ) {
 				$rule[3] = 'string';
 			}
 

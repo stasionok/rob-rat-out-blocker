@@ -16,4 +16,4 @@ if [[ -z $1 ]]; then
     echo -e "\e[31mRun in svn directory \e[4msvn ci -m 'MESSAGE' --username stasionok\e[0m"
     exit 0;
 fi
-svn ci -m "${1}"
+svn ci -m "${1}" --username stasionok

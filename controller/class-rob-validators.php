@@ -27,12 +27,12 @@ if ( ! class_exists( 'ROB_Validators' ) ) {
 						$items   = array();
 						foreach ( $filters as $item ) {
 							$rule    = explode( '@#$', $item );
-							$rule    = array_splice( $rule, 0, 4 );
+							$rule    = array_splice( $rule, 0, 5 );
 							$rule[0] = sanitize_text_field( $rule[0] );
 							if ( isset( $rule[1] ) ) {
-								$rule[1] = 'false' === $rule[1] ? false : boolval( $rule[1] );
+								$rule[1] = 'true' === sanitize_text_field( $rule[1] );
 								if ( isset( $rule[2] ) ) {
-									$res =  stripslashes( $rule[2] );
+									$res     = stripslashes( $rule[2] );
 									$rule[2] = sanitize_text_field( $res );
 									if ( ! ROB_Common::is_json( $rule[2] ) ) {
 										$rule[2] = '{}';
@@ -41,6 +41,13 @@ if ( ! class_exists( 'ROB_Validators' ) ) {
 										$rule[3] = sanitize_text_field( $rule[3] );
 										if ( ! in_array( $rule[3], array( 'object', 'array', 'string' ) ) ) {
 											$rule[3] = 'string';
+										}
+										if ( isset( $rule[4] ) ) {
+											$res     = stripslashes( $rule[4] );
+											$rule[4] = sanitize_text_field( $res );
+											if ( ! ROB_Common::is_json( $rule[4] ) ) {
+												$rule[4] = '{}';
+											}
 										}
 									}
 								}

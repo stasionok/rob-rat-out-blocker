@@ -38,9 +38,12 @@ cp -v ./bootstrap.php ./svn/tags/${VER}
 cp -v ./readme.txt ./svn/trunk/
 cp -v ./readme.txt ./svn/tags/${VER}
 
+cp -v ./LICENSE ./svn/trunk/
+cp -v ./LICENSE ./svn/tags/${VER}
+
 #copy common files
-cp ./*.png ./svn/assets
-cp ./blueprint.json ./svn/assets/blueprints/
+cp ./*.png ./svn/assets/
+cp -v ./blueprint.json ./svn/assets/blueprints/
 
 #msg
 echo -e "\e[31m!!! PLEASE UPDATE \033[4mchangelog !!!\e[0m"

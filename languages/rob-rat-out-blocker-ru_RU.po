@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ROB (rat out blocker)\n"
-"POT-Creation-Date: 2020-02-02 12:18+0300\n"
-"PO-Revision-Date: 2020-02-02 12:19+0300\n"
+"POT-Creation-Date: 2025-02-23 22:30+0300\n"
+"PO-Revision-Date: 2025-02-23 22:30+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -22,21 +22,35 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: bootstrap.php:32 svn/tags/1.0/bootstrap.php:32 svn/trunk/bootstrap.php:32
+#: bootstrap.php:33 svn/tags/1.0.1/bootstrap.php:32
+#: svn/tags/1.0.2/bootstrap.php:32 svn/tags/1.0.3/bootstrap.php:32
+#: svn/tags/1.0.4/bootstrap.php:32 svn/tags/1.0/bootstrap.php:32
+#: svn/trunk/bootstrap.php:32
 msgid "Your server is running PHP version "
 msgstr "Ваш сервер работает на PHP версии "
 
-#: bootstrap.php:36 svn/tags/1.0/bootstrap.php:36 svn/trunk/bootstrap.php:36
+#: bootstrap.php:37 svn/tags/1.0.1/bootstrap.php:36
+#: svn/tags/1.0.2/bootstrap.php:36 svn/tags/1.0.3/bootstrap.php:36
+#: svn/tags/1.0.4/bootstrap.php:36 svn/tags/1.0/bootstrap.php:36
+#: svn/trunk/bootstrap.php:36
 msgid "Your Wordpress running version is "
 msgstr "У вас установлен WordPress версии "
 
 #: controller/class-rob-common.php:167
+#: svn/tags/1.0.1/controller/class-rob-common.php:167
+#: svn/tags/1.0.2/controller/class-rob-common.php:167
+#: svn/tags/1.0.3/controller/class-rob-common.php:167
+#: svn/tags/1.0.4/controller/class-rob-common.php:167
 #: svn/tags/1.0/controller/class-rob-common.php:167
 #: svn/trunk/controller/class-rob-common.php:167
 msgid "open ROB page"
 msgstr "открыть страницу ROB"
 
 #: controller/class-rob-common.php:168
+#: svn/tags/1.0.1/controller/class-rob-common.php:168
+#: svn/tags/1.0.2/controller/class-rob-common.php:168
+#: svn/tags/1.0.3/controller/class-rob-common.php:168
+#: svn/tags/1.0.4/controller/class-rob-common.php:168
 #: svn/tags/1.0/controller/class-rob-common.php:168
 #: svn/trunk/controller/class-rob-common.php:168
 msgid "open ROB"
@@ -44,19 +58,36 @@ msgstr "открыть ROB"
 
 #. Plugin Name of the plugin/theme
 #: controller/class-rob-common.php:181 controller/class-rob-common.php:182
+#: svn/tags/1.0.1/controller/class-rob-common.php:181
+#: svn/tags/1.0.1/controller/class-rob-common.php:182
+#: svn/tags/1.0.2/controller/class-rob-common.php:181
+#: svn/tags/1.0.2/controller/class-rob-common.php:182
+#: svn/tags/1.0.3/controller/class-rob-common.php:181
+#: svn/tags/1.0.3/controller/class-rob-common.php:182
+#: svn/tags/1.0.4/controller/class-rob-common.php:181
+#: svn/tags/1.0.4/controller/class-rob-common.php:182
 #: svn/tags/1.0/controller/class-rob-common.php:181
 #: svn/tags/1.0/controller/class-rob-common.php:182
 #: svn/trunk/controller/class-rob-common.php:181
-#: svn/trunk/controller/class-rob-common.php:182
+#: svn/trunk/controller/class-rob-common.php:182 views/requirements-error.php:7
+#: views/settings-page.php:18
 msgid "ROB (rat out blocker)"
 msgstr "ROB (блокировщик стучалок)"
 
-#: controller/class-rob-common.php:272
+#: controller/class-rob-common.php:297
+#: svn/tags/1.0.1/controller/class-rob-common.php:272
+#: svn/tags/1.0.2/controller/class-rob-common.php:272
+#: svn/tags/1.0.3/controller/class-rob-common.php:272
+#: svn/tags/1.0.4/controller/class-rob-common.php:272
 #: svn/tags/1.0/controller/class-rob-common.php:272
 #: svn/trunk/controller/class-rob-common.php:272
 msgid "Too many redirects."
 msgstr "Слишком много перенаправлений."
 
+#: svn/tags/1.0.1/views/requirements-error.php:7
+#: svn/tags/1.0.2/views/requirements-error.php:7
+#: svn/tags/1.0.3/views/requirements-error.php:7
+#: svn/tags/1.0.4/views/requirements-error.php:7
 #: svn/tags/1.0/views/requirements-error.php:7
 #: svn/trunk/views/requirements-error.php:7 views/requirements-error.php:7
 msgid ""
@@ -66,6 +97,10 @@ msgstr ""
 "ошибка: Ваша среда не соответствует всем системным требованиям, "
 "перечисленным ниже."
 
+#: svn/tags/1.0.1/views/requirements-error.php:17
+#: svn/tags/1.0.2/views/requirements-error.php:17
+#: svn/tags/1.0.3/views/requirements-error.php:17
+#: svn/tags/1.0.4/views/requirements-error.php:17
 #: svn/tags/1.0/views/requirements-error.php:17
 #: svn/trunk/views/requirements-error.php:17 views/requirements-error.php:17
 msgid ""
@@ -76,40 +111,72 @@ msgstr ""
 "хостинговой компании, а если вам нужна помощь в обновлении WordPress, вы "
 "можете обратиться к"
 
+#: svn/tags/1.0.1/views/settings-page.php:20
+#: svn/tags/1.0.2/views/settings-page.php:20
+#: svn/tags/1.0.3/views/settings-page.php:20
+#: svn/tags/1.0.4/views/settings-page.php:20
 #: svn/tags/1.0/views/settings-page.php:20 svn/trunk/views/settings-page.php:20
-#: views/settings-page.php:20
+#: views/settings-page.php:21
 msgid "Rules"
 msgstr "Правила"
 
+#: svn/tags/1.0.1/views/settings-page.php:24
+#: svn/tags/1.0.2/views/settings-page.php:24
+#: svn/tags/1.0.3/views/settings-page.php:24
+#: svn/tags/1.0.4/views/settings-page.php:24
 #: svn/tags/1.0/views/settings-page.php:24 svn/trunk/views/settings-page.php:24
-#: views/settings-page.php:24
+#: views/settings-page.php:25
 msgid "Any new line read as separate rule."
 msgstr "Каждая строка считается отдельным правилом."
 
+#: svn/tags/1.0.1/views/settings-page.php:25
+#: svn/tags/1.0.2/views/settings-page.php:25
+#: svn/tags/1.0.3/views/settings-page.php:25
+#: svn/tags/1.0.4/views/settings-page.php:25
 #: svn/tags/1.0/views/settings-page.php:25 svn/trunk/views/settings-page.php:25
-#: views/settings-page.php:25
+#: views/settings-page.php:26
 msgid "You can use from 1 to all parameters per rule"
 msgstr "Вы можете использовать от 1 до всех параметров для каждого правила"
 
+#: svn/tags/1.0.1/views/settings-page.php:26
+#: svn/tags/1.0.2/views/settings-page.php:26
+#: svn/tags/1.0.3/views/settings-page.php:26
+#: svn/tags/1.0.4/views/settings-page.php:26
 #: svn/tags/1.0/views/settings-page.php:26 svn/trunk/views/settings-page.php:26
-#: views/settings-page.php:26
+#: views/settings-page.php:27
 msgid "Full rule format is:"
 msgstr "Полный формат правила:"
 
+#: svn/tags/1.0.1/views/settings-page.php:28
+#: svn/tags/1.0.2/views/settings-page.php:28
+#: svn/tags/1.0.3/views/settings-page.php:28
+#: svn/tags/1.0.4/views/settings-page.php:28
 #: svn/tags/1.0/views/settings-page.php:28 svn/trunk/views/settings-page.php:28
-#: views/settings-page.php:28
+#: views/settings-page.php:29
 msgid "Separator for parameters is "
 msgstr "Разделитель параметров "
 
+#: svn/tags/1.0.1/views/settings-page.php:30
+#: svn/tags/1.0.2/views/settings-page.php:30
+#: svn/tags/1.0.3/views/settings-page.php:30
+#: svn/tags/1.0.4/views/settings-page.php:30
 #: svn/tags/1.0/views/settings-page.php:30 svn/trunk/views/settings-page.php:30
-#: views/settings-page.php:30
+#: views/settings-page.php:31
 msgid "empty parameter equal to "
 msgstr "пустое значение параметра считается равным "
 
+#: svn/tags/1.0.1/views/settings-page.php:40
+#: svn/tags/1.0.2/views/settings-page.php:40
+#: svn/tags/1.0.3/views/settings-page.php:40
+#: svn/tags/1.0.4/views/settings-page.php:40
 #: svn/tags/1.0/views/settings-page.php:40 svn/trunk/views/settings-page.php:40
-#: views/settings-page.php:40
+#: views/settings-page.php:41
 msgid "Save"
 msgstr "Сохранить"
+
+#: views/settings-page.php:51
+msgid "Need to catch HTTP requests? Try the <a href="%s" target="_blank">Log HTTP Requests</a> plugin to track and analyze outgoing requests."
+msgstr "Нужно отловить HTTP запросы? Попробуйте <a href="%s" target="_blank">Log HTTP Requests</a> плагин для отслеживания и аналзиза исходящих запросов."
 
 #. Plugin URI of the plugin/theme
 msgid "https://web-marshal.ru/rob-rat-out-blocker/"
@@ -117,8 +184,7 @@ msgstr "https://web-marshal.ru/rob-rat-out-blocker/"
 
 #. Description of the plugin/theme
 msgid "Block external requests with regex or url part"
-msgstr ""
-"Блокирует внешние запросы по части урл или с помощью регулярных выражений"
+msgstr "Блокирует внешние запросы по части урл или с помощью регулярных выражений"
 
 #. Author of the plugin/theme
 msgid "Stanislav Kuznetsov"
