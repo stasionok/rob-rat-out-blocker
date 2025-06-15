@@ -3,8 +3,8 @@ Contributors: stasionok
 Donate link: https://web-marshal.ru/rob-rat-out-blocker/
 Tags: block, request, external request, security, safety
 Requires at least: 5.0
-Tested up to: 6.5.2
-Stable tag: 1.1.0
+Tested up to: 6.8.1
+Stable tag: 1.1.1
 Requires PHP: 7.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -44,6 +44,9 @@ Plugin can convert your answer to array, object or leave string as is
 1. Main plugin page with rules field and placeholder examples
 
 == Changelog ==
+
+= 1.1.1 =
+* Test WP 6.8.1 compatibility
 
 = 1.1.0 =
 * Add request body filter to skip Rob impact for same url

@@ -6,7 +6,7 @@
  * Author URI:  https://www.linkedin.com/in/stasionok/
  * Author Telegram: https://t.me/stasionok
  * Author:      Stanislav Kuznetsov
- * Version:     1.1.0
+ * Version:     1.1.1
  * License: GPLv2 or later
  * Text Domain: rob-rat-out-blocker
  * Domain Path: /languages
